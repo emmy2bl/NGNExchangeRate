@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live USD to NGN Exchange Rate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+
+    .chart-container {
+      width: 100%;
+      max-width: 900px;
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    .loader {
+      border: 4px solid #334155;
+      border-top: 4px solid #38bdf8;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    .badge {
+      background: #22c55e;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Live USD to NGN Exchange Rate</h1>
+  <div class="chart-container">
+    <div id="loader" class="loader"></div>
+    <iframe id="chart" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwxtAUrFfDbrw_a5IpLsvGR6e9W1XyTBTeS-6sXbSgPOOGUlVC9iO_cZF-XJYrYUkwv1mOUZPBSVVD/pubchart?oid=1731446577&format=interactive" onload="document.getElementById('loader').style.display='none'"></iframe>
+  </div>
+  <div class="badge">✔️ API Online</div>
+  <footer>
+    Powered by Google Sheets &amp; ER-API | Updated Automatically<br>
+    &copy; 2025 Live FX Tracker. Built by <a href="mailto:Emmybl39@gmail.com" style="color:#38bdf8;text-decoration:none;">Ephraim Orjiako</a>
+  </footer>
+</body>
+</html>
